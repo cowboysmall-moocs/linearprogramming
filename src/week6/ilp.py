@@ -61,6 +61,8 @@ def solve_ilp(dictionary, indices):
         solved = solve(initialized)
         if solved is None:
             return 'UNBOUNDED'
+        elif np.array_equal(dictionary, solved):
+            return 'INFEASIBLE'
         elif not is_ilp_final(solved, indices):
             return solve_ilp(add_cutting_planes(solved), indices)
         else:
