@@ -77,11 +77,6 @@ def main(argv):
     initial_dict = construct_dictionary(argv[0])
     final_dict   = solve_ilp(initial_dict, np.copy(initial_dict[-1, 2:]))
 
-    # if not is_final(initial_dict):
-    #     final_dict = solve_ilp(initial_dict, np.copy(initial_dict[-1, 2:]))
-    # else:
-    #     final_dict = 'INFEASIBLE'
-
     print
     print initial_dict
     print
